@@ -1,0 +1,21 @@
+<div class="card mb-3" *ngIf="ep">
+  <div class="card-body">
+    <div>
+      <h3>
+        {{ ep.name }}
+      </h3>
+    </div>
+
+    <div>
+      {{ ep.episode }}
+    </div>
+
+    <div>Date: {{ ep.air_date }}</div>
+
+    <div>Characters Count: {{ ep.characters.length }}</div>
+  </div>
+
+  <div class="card-footer">
+    <a routerLink="" class="btn btn-primary">View More</a>
+  </div>
+</div>

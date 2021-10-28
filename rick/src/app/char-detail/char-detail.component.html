@@ -1,0 +1,28 @@
+<div class="row" *ngIf="char">
+  <div class="col-8">
+    <h1>{{ char?.name }}</h1>
+    <hr />
+    <h2>Character Details</h2>
+    <ul>
+      <li>Gender: {{ char.gender }}</li>
+      <li>Origin: {{ char.origin.name }}</li>
+      <li>Location: {{ char.location.name }}</li>
+      
+      <!-- <li>
+        Episode list:
+        <ul>
+          <li *ngFor="let ep of char.episode">
+            {{ ep }}
+          </li>
+        </ul>
+      </li> -->
+    </ul>
+      <h2>Character Episodes</h2>
+      <app-char-ep-list  [char]="char"></app-char-ep-list>
+      <!-- <p> Papildomai, prie epizodu atvaizduoti ju screenshots.</p> -->
+  </div>
+  <div class="col-4">
+    <img src="{{ char.image }}" [alt]="char.name" class="img-fluid" />
+  </div>
+</div>
+<div class="loader w-100 text-center mt-3" *ngIf="char == undefined">Loading....</div>
