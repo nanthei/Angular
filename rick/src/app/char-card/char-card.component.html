@@ -1,0 +1,15 @@
+<div class="card mb-3" *ngIf="char">
+    <div class="card-body">
+        <img src="{{ char.image }}" [alt]="char.name" class="img-fluid" />
+      <div>
+        <h3>
+          {{ char.name }}
+        </h3>
+      </div>
+    </div>
+  
+    <div class="card-footer">
+      <a routerLink="/char/{{char.id}}" class="btn btn-primary">Details</a>
+    </div>
+  </div>
+  

@@ -1,0 +1,18 @@
+<div class="row" *ngIf="ep">
+    <div class="col-8">
+      <h1>{{ ep?.name }}</h1>
+      <hr />
+      <h2>Episode Details</h2>
+      <ul>
+        <li>Episode: {{ ep.episode }}</li>
+        <li>Air Date: {{ ep.air_date }}</li>
+        <li>Created: {{ ep.created }}</li>
+      </ul>
+        <h2>Episode Characters</h2>
+        <app-ep-char-list  [ep]="ep"></app-ep-char-list>
+    </div>
+    <div class="col-4">
+      <!-- <img src="{{ char.image }}" [alt]="char.name" class="img-fluid" /> -->
+    </div>
+  </div>
+  <div class="loader w-100 text-center mt-3" *ngIf="ep == undefined">Loading....</div>

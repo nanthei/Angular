@@ -7,19 +7,9 @@
       <li>Gender: {{ char.gender }}</li>
       <li>Origin: {{ char.origin.name }}</li>
       <li>Location: {{ char.location.name }}</li>
-      
-      <!-- <li>
-        Episode list:
-        <ul>
-          <li *ngFor="let ep of char.episode">
-            {{ ep }}
-          </li>
-        </ul>
-      </li> -->
     </ul>
       <h2>Character Episodes</h2>
       <app-char-ep-list  [char]="char"></app-char-ep-list>
-      <!-- <p> Papildomai, prie epizodu atvaizduoti ju screenshots.</p> -->
   </div>
   <div class="col-4">
     <img src="{{ char.image }}" [alt]="char.name" class="img-fluid" />

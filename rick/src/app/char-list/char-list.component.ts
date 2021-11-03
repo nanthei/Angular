@@ -16,7 +16,7 @@ export class CharListComponent implements OnInit {
   ngOnInit(): void {
     this.getCharacters();
   }
-
+ 
   getCharacters() {
     this.charService.getCharacters(this.page).subscribe((data: any) => {
       this.characters = data.results;
@@ -25,7 +25,9 @@ export class CharListComponent implements OnInit {
   }
 
   nextPage() {
+    if (this.page <this.charactersInfo.pages){
     this.page++;
+    }
     this.getCharacters();
   }
 

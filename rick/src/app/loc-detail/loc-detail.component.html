@@ -1,0 +1,18 @@
+<div class="row" *ngIf="loc">
+    <div class="col-8">
+      <h1>{{ loc?.name }}</h1>
+      <hr />
+      <h2>Location Details</h2>
+      <ul>
+        <li>Type: {{ loc.type }}</li>
+        <li>Dimension: {{ loc.dimension }}</li>
+        <li>Created: {{ loc.created }}</li>
+      </ul>
+        <h2>Location Characters</h2>
+        <app-loc-char-list  [loc]="loc"></app-loc-char-list>
+    </div>
+    <div class="col-4">
+      <!-- <img src="{{ char.image }}" [alt]="char.name" class="img-fluid" /> -->
+    </div>
+  </div>
+  <div class="loader w-100 text-center mt-3" *ngIf="loc == undefined">Loading....</div>

@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-12 text-center">
+      <h1>Rick And Morty Locs</h1>
+    </div>
+  
+    <div class="row mb-3">
+      <div class="col-4">
+        <button class="btn btn-secondary ml-3" (click)="prevPage()">
+          Prev Page
+        </button>
+      </div>
+  
+      <div class="col-4 text-center fs-5">
+        Current page: {{ page }} / {{ locationsInfo.pages }}
+      </div>
+      <div class="col-4 text-end">
+        <button class="btn btn-secondary" (click)="nextPage()">Next Page</button>
+      </div>
+    </div>
+  
+    <div class="col-sm-4 mb-3" *ngFor="let loc of locations">
+      <div class="card" routerLink="{{ loc.id }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ loc.name }}</h5>
+          <h6 class="card-title">{{ loc.type }}</h6>
+          <h6 class="card-title">{{ loc.dimension }}</h6>
+          <p class="card-text"></p>
+          <button class="btn btn-primary">Details</button>
+        </div>
+      </div>
+    </div>
+  </div>
+   
