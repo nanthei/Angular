@@ -1,23 +1,24 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { FooterComponent } from './footer/footer.component';
-import { HeaderComponent } from './header/header.component';
-import { CharListComponent } from './char-list/char-list.component';
-import { CharDetailComponent } from './char-detail/char-detail.component';
-import { CharEpListComponent } from './char-ep-list/char-ep-list.component';
-import { EpCardComponent } from './ep-card/ep-card.component';
-import { EpListComponent } from './ep-list/ep-list.component';
-import { LocListComponent } from './loc-list/loc-list.component';
-import { EpDetailComponent } from './ep-detail/ep-detail.component';
-import { LocDetailComponent } from './loc-detail/loc-detail.component';
+import { FooterComponent } from './components/main/footer/footer.component';
+import { HeaderComponent } from './components/main/header/header.component';
+import { CharListComponent } from './components/char/char-list/char-list.component';
+import { CharDetailComponent } from './components/char/char-detail/char-detail.component';
+import { CharEpListComponent } from './components/char/char-ep-list/char-ep-list.component';
+import { EpCardComponent } from './components/ep/ep-card/ep-card.component';
+import { EpListComponent } from './components/ep/ep-list/ep-list.component';
+import { LocListComponent } from './components/loc/loc-list/loc-list.component';
+import { EpDetailComponent } from './components/ep/ep-detail/ep-detail.component';
+import { LocDetailComponent } from './components/loc/loc-detail/loc-detail.component';
 
-import { CharService } from './char.service';
-import { EpService } from './ep.service';
-import { LocService } from './loc.service';
+import { CharService } from './services/char.service';
+import { EpService } from './services/ep.service';
+import { LocService } from './services/loc.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -36,9 +37,10 @@ import { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';
 import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
 import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
-import { EpCharListComponent } from './ep-char-list/ep-char-list.component';
-import { LocCharListComponent } from './loc-char-list/loc-char-list.component';
-import { CharCardComponent } from './char-card/char-card.component';
+import { EpCharListComponent } from './components/ep/ep-char-list/ep-char-list.component';
+import { LocCharListComponent } from './components/loc/loc-char-list/loc-char-list.component';
+import { CharCardComponent } from './components/char/char-card/char-card.component';
+import { SearchFormComponent } from './components/main/search-form/search-form.component';
 
 
 @NgModule({
@@ -56,7 +58,8 @@ import { CharCardComponent } from './char-card/char-card.component';
     LocDetailComponent,
     EpCharListComponent,
     LocCharListComponent,
-    CharCardComponent
+    CharCardComponent,
+    SearchFormComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +80,8 @@ import { CharCardComponent } from './char-card/char-card.component';
     MdbTooltipModule,
     MdbValidationModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [CharService,
     EpService,
