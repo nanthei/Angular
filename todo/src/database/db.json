@@ -4,19 +4,25 @@
       "id": 1,
       "title": "Užduotis 1",
       "author": "typicode",
-      "completed": true
-    },
-    {
-      "id": 2,
-      "title": "Sukurti taskDelte funkcija",
-      "author": "labas",
-      "completed": true
+      "completed": false
     },
     {
       "id": 3,
       "title": "AS buvau atnaujintas",
       "author": "labas",
       "completed": false
+    },
+    {
+      "title": "new",
+      "completed": false,
+      "author": "new",
+      "id": 4
+    },
+    {
+      "title": "newa",
+      "completed": false,
+      "author": "newa",
+      "id": 5
     }
   ]
 }
