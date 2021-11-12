@@ -1,1 +1,31 @@
-<p>users works!</p>
+<app-user-create (newItemEvent)="getUsers()"></app-user-create>
+<table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>User Title</th>
+        <th>Author</th>
+        <th>ID</th>
+      </tr>
+    </thead>
+    <!-- Dinaminis klases pridejimas elementui:
+    [class.class-name]
+    -->
+    <tr *ngFor="let user of users">
+      <td>
+        <!-- Ateityje si elementa naudosime, pazymeti uzduotis kaip baigtas -->
+        <!-- [checked] - dinaminis checked atributo priskyrimas -->
+        
+      </td>
+      <td><i class="bi-alarm"></i> {{ user.title }}</td>
+      <td><i class="bi bi-activity"></i> Author: {{ user.author }}</td>
+      <td>{{ user.id }}</td>
+      <td>
+        <button
+        (click)="deleteUser(user)"
+        class="btn btn-danger bg-danger">
+          <i class="bi bi-trash-fill"></i>
+        </button>
+      </td>
+    </tr>
+  </table> 

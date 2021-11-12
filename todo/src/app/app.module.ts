@@ -11,13 +11,15 @@ import { TaskCreateComponent } from './components/task-create/task-create.compon
 import { FormsModule } from '@angular/forms';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { UsersComponent } from './components/users/users.component';
+import { UserCreateComponent } from './components/user-create/user-create.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TaskCreateComponent,
     TasksComponent,
-    UsersComponent
+    UsersComponent,
+    UserCreateComponent
   ],
   imports: [
     BrowserModule,
