@@ -7,36 +7,91 @@
       "completed": false
     },
     {
+      "id": 2,
+      "title": "Sukurti taskDelte funkcija",
+      "author": "labas",
+      "completed": false
+    },
+    {
       "id": 3,
       "title": "AS buvau atnaujintas",
       "author": "labas",
       "completed": false
     },
     {
-      "title": "new",
+      "title": "labas",
       "completed": false,
-      "author": "new",
+      "author": "123",
       "id": 4
     },
     {
-      "title": "newa",
+      "title": "321312",
       "completed": false,
-      "author": "newa",
+      "author": "321312",
       "id": 5
-    }
-  ],
-  "users": [
+    },
+    {
+      "title": "labas",
+      "completed": false,
+      "author": "labas",
+      "id": 6
+    },
+    {
+      "title": "321312",
+      "completed": false,
+      "author": "321312",
+      "id": 7
+    },
+    {
+      "title": "321321",
+      "completed": false,
+      "author": "321312",
+      "id": 8
+    },
+    {
+      "title": "nauja uzduotis",
+      "completed": false,
+      "author": "labas",
+      "id": 9
+    },
+    {
+      "title": "labgas",
+      "completed": false,
+      "author": "321",
+      "id": 10
+    },
+    {
+      "title": "a",
+      "completed": false,
+      "author": "",
+      "priority": "",
+      "id": 11
+    },
     {
       "title": "a",
       "completed": false,
       "author": "a",
-      "id": 6
+      "priority": "high",
+      "id": 12
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Test",
+      "email": "labas@gmail.com"
     },
     {
-      "title": "ab",
-      "completed": false,
-      "author": "ab",
-      "id": 7
+      "name": "name",
+      "email": "email",
+      "id": 2
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "Project 1",
+      "logo": "#"
     }
   ]
 }

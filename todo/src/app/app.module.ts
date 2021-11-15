@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { UsersComponent } from './components/users/users.component';
 import { UserCreateComponent } from './components/user-create/user-create.component';
+import { StatsComponent } from './components/stats/stats.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { UserCreateComponent } from './components/user-create/user-create.compon
     TaskCreateComponent,
     TasksComponent,
     UsersComponent,
-    UserCreateComponent
+    UserCreateComponent,
+    StatsComponent
   ],
   imports: [
     BrowserModule,

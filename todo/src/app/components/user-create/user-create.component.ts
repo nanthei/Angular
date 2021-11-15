@@ -10,9 +10,8 @@ import { UserService } from 'src/app/services/user.service';
 export class UserCreateComponent implements OnInit {
 
   public user: User = {
-    title: "",
-    completed: false,
-    author: "",
+    name: "",
+    email: "",
   };
 
   @Output() newItemEvent = new EventEmitter();
