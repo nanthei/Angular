@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { User } from '../interfaces/user';
 
 @Injectable({
@@ -8,24 +7,33 @@ import { User } from '../interfaces/user';
 })
 export class UserService {
 
+  // Api uzklausos kelias
   private apiUrl : string = 'http://localhost:3000/users';
-  constructor(private http : HttpClient) { }
 
+  constructor(private http : HttpClient) {
 
+  }
 
-getUsers() : Observable<User[]> {
-  let uri = this.apiUrl
-  // Siuncama get uzklausa i API
+  // Funkcija gauti visiems useriams
+  getUsers() {
+    let uri = this.apiUrl;
+    return this.http.get(uri);
+  }
 
-  // .get() - gauname duomenis is duombazes
-  return this.http.get<User[]>(uri);
-}
+  getUser(id : any) {
+    let uri = this.apiUrl;
 
-createUser(user : User) {
-  let uri = this.apiUrl;
-  // Kreipdamiesi POST metodu, galime sukurti nauja uzduoty duombazeje
-  return this.http.post(uri, user);
-}
+    uri += "/" + id;
+    return this.http.get(uri);
+  }
+
+  createUser(user : User) {
+    let uri = this.apiUrl;
+
+    let body = user;
+
+    return this.http.post(uri, body);
+  }
 
 deleteUser(user : User) {
   let uri = this.apiUrl + "/" +  user.id;

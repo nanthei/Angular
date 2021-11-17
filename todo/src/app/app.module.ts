@@ -13,6 +13,8 @@ import { TasksComponent } from './components/tasks/tasks.component';
 import { UsersComponent } from './components/users/users.component';
 import { UserCreateComponent } from './components/user-create/user-create.component';
 import { StatsComponent } from './components/stats/stats.component';
+import { TaskDetailsComponent } from './components/task-details/task-details.component';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { StatsComponent } from './components/stats/stats.component';
     TasksComponent,
     UsersComponent,
     UserCreateComponent,
-    StatsComponent
+    StatsComponent,
+    TaskDetailsComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
