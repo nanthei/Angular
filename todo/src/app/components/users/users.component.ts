@@ -22,7 +22,7 @@ export class UsersComponent implements OnInit {
     'name': '',
     'email': ''
   }
-
+ 
   // Standartinis avatar, kuris naudojamas jei vartotojas neturi nuotraukos
   public defaultAvatar: string = "assets/img/default-avatar.jpeg";
 
@@ -59,5 +59,14 @@ export class UsersComponent implements OnInit {
   }
 
 
+    deleteUser(user: User) {
+      console.log('Task Will be deleted:');
+      console.log(user);
+      this._userService.deleteUser(user).subscribe(data => {
+        console.log(data);
+        // Po sekmingo istrynimo atnaujiname tasks duomenis
+        this.getUsers();
+      });
+    }
 
 }

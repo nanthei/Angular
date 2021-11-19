@@ -6,7 +6,7 @@ import { Task } from '../interfaces/task';
 @Injectable({
   providedIn: 'root'
 })
-export class TaskService {
+export class TaskService { 
 
   // API Adresas is kur gausime duomenis
   private apiUrl: string = 'http://localhost:3000/tasks';
@@ -26,8 +26,8 @@ export class TaskService {
       */
       // Pridedame prie uzklausos: ?_expand=user
       uri += "?_expand=user";
-    }
-
+    } 
+ 
     // Siuncama get uzklausa i API
 
     // .get() - gauname duomenis is duombazes
@@ -76,5 +76,13 @@ export class TaskService {
 
   }
 
+  getTask(id : any) {
+    let uri = this.apiUrl;
+
+    uri += "/" + id;
+  
+    return this.http.get(uri);
+
+  }
 
 }

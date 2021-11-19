@@ -1,6 +1,26 @@
 <h1>Create User</h1>
 
-<form (ngSubmit)="userCreate()">
+<div class="alert alert-danger" *ngIf="userForm.submitted && userForm.invalid">
+  <!-- Div'as naudojams klaidoms atvaizduoti -->
+  <div *ngIf="name.errors?.['required']">
+    Title laukelis privalomas
+  </div>
+
+  <div *ngIf="name.errors?.['minlength']">
+    Title laukelis turi buti bent 4 simboliu
+  </div>
+
+  <div *ngIf="email.errors?.['pattern']">
+    Email netinkamas
+  </div>
+  
+  <div *ngIf="email.errors?.['required']">
+    Email laukelis privalomas
+  </div>
+
+</div>
+
+<form (ngSubmit)="userCreate(userForm)" #userForm="ngForm">
   <div class="row">
     <div class="col-4">
       <div class="form-group">
@@ -9,17 +29,48 @@
         [(ngModel)]="user.name"
         placeholder="Enter User name"
         name="name"
-        class="form-controll" />
+        #name="ngModel"
+        class="form-control" 
+        [class.is-valid]="name.valid"
+        [class.is-invalid]="name.invalid && userForm.submitted"
+        minlength="4"
+        required />
+
+        <div *ngIf="name.valid && name.dirty" class="valid-feedback">
+          Looks good!
+        </div>
+
+        <!-- Div'as naudojams klaidoms atvaizduoti -->
+        <div *ngIf="name.invalid && name.dirty">
+          Name laukelis neteisingas
+        </div>
+
       </div>
     </div>
 
     <div class="col-4">
       <div class="form-group">
         <input type="text"
-        placeholder="Enter Author name"
+        placeholder="Enter User email"
         [(ngModel)]="user.email"
         name="email"
-        class="form-controll" />
+        #email="ngModel"
+        class="form-control" 
+        [class.is-valid]="email.valid"
+        [class.is-invalid]="email.invalid && userForm.submitted"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+        required
+        />
+
+        <div *ngIf="email.valid && email.dirty" class="valid-feedback">
+          Looks good!
+        </div>
+
+        <!-- Div'as naudojams klaidoms atvaizduoti -->
+        <div *ngIf="email.invalid && email.dirty">
+          Email laukelis neteisingas
+        </div>
+
       </div>
     </div>
 

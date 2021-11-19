@@ -10,9 +10,7 @@ export class UserService {
   // Api uzklausos kelias
   private apiUrl : string = 'http://localhost:3000/users';
 
-  constructor(private http : HttpClient) {
-
-  }
+  constructor(private http : HttpClient) { }
 
   // Funkcija gauti visiems useriams
   getUsers() {
@@ -24,7 +22,9 @@ export class UserService {
     let uri = this.apiUrl;
 
     uri += "/" + id;
-    return this.http.get(uri);
+    uri += "?_embed=tasks";
+    // return this.http.get(uri);
+    return this.http.get<User[]>(uri);
   }
 
   createUser(user : User) {
@@ -37,7 +37,6 @@ export class UserService {
 
 deleteUser(user : User) {
   let uri = this.apiUrl + "/" +  user.id;
-
 
   // Kreipdamisei DELETE metodu i: http://localhost:3000/tasks/id
   // Istrininame irasa duombazeje

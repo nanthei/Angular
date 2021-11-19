@@ -23,14 +23,6 @@
       "userId": 2
     },
     {
-      "title": "3211",
-      "completed": false,
-      "author": "312312",
-      "priority": "high",
-      "userId": 0,
-      "id": 4
-    },
-    {
       "title": "Uzduotis vartotojui 3",
       "completed": false,
       "author": "Test",
@@ -62,6 +54,11 @@
       "name": "User 3",
       "email": "user3@gmail.com",
       "id": 3
+    },
+    {
+      "name": "keturi",
+      "email": "user 4",
+      "id": 4
     }
   ],
   "projects": [

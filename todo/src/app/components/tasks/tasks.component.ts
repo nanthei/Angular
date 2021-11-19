@@ -1,11 +1,6 @@
-import { fn } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit, HostListener, Host } from '@angular/core';
 import { Task } from 'src/app/interfaces/task';
 import { TaskService } from 'src/app/services/task.service';
-
-
-
-
 
 @Component({
   selector: 'app-tasks',

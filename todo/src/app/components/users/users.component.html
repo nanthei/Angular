@@ -1,3 +1,8 @@
+
+
+
+
+
 <div class="row">
   <div class="col-8">
     <h1 class="mt-3">
@@ -14,30 +19,8 @@
 </div>
 
 <div class="row">
-  <div class="col-12" [hidden]="hideForm">
-    <h2>Add New User</h2>
-    <form (ngSubmit)="addUser()" class="mb-3">
-      <div class="row">
-        <div class="col">
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" required [(ngModel)]="newUser.email" name="email" class="form-control" id="email">
-          </div>
-        </div>
-        <div class="col">
-          <div class="mb-3">
-            <label for="userName" class="form-label">Name</label>
-            <input type="text" required [(ngModel)]="newUser.name" name="name" class="form-control" id="userName">
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-12">
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-      </div>
-    </form>
+  <div class="col-12 mb-3" [hidden]="hideForm">
+    <app-user-create (newItemEvent)="getUsers()"></app-user-create>
   </div>
 
 </div>
@@ -45,10 +28,13 @@
 <div class="row">
   <div class="col-sm-6" *ngFor="let user of users">
     <div class="card mb-3">
-      <div class="card-header">
+      <div class="card-header d-flex justify-content-between">
         <a routerLink="/users/{{ user.id}}">
           {{ user.name }}
         </a>
+        <button (click)="deleteUser(user)" class="btn btn-danger bg-danger">
+          <i class="bi bi-trash-fill"></i>
+        </button>
       </div>
 
       <div class="card-body">

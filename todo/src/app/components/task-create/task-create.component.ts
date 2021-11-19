@@ -1,7 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Task } from 'src/app/interfaces/task';
 import { TaskService } from 'src/app/services/task.service';
-import { switchMap, tap } from 'rxjs/operators';
 import { NgForm } from '@angular/forms';
 import { User } from 'src/app/interfaces/user';
 import { UserService } from 'src/app/services/user.service';
